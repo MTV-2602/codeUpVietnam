@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/controller/ReviewCourseController.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/controller/ViewRegistrationNotesController.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/web/META-INF/context.xml</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/web/login.jsp</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/web/reviewCourse.jsp</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/web/WEB-INF/web.xml</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/dto/Registration.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/util/DatabaseConnection.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/dao/CourseDAO.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/web/createCourse.jsp</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/dto/Course.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/dao/RegistrationDAO.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/controller/CreateCourseController.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/controller/MainController.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/dao/UserDAO.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/dao/ReviewDAO.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/web/courseListInactive.jsp</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/web/register.jsp</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/controller/UpdateReviewController.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/web/registrationList.jsp</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/controller/RegisterController.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/web/dashboard.jsp</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/web/courseList.jsp</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/controller/LogoutController.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/web/bookRegistration.jsp</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/dto/User.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/controller/CourseListInactiveController.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/controller/BookRegistrationController.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/dto/Review.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/web/registrationNotes.jsp</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/controller/CourseController.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/controller/LoginController.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/controller/ViewReviewController.java</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/web/viewReviews.jsp</file>
+            <file>file:/D:/kì%204/prj/Ass2_codeUpVietnam/src/java/controller/ViewRegistrationsController.java</file>
+        </group>
+    </open-files>
+</project-private>

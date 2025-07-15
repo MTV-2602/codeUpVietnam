@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #a8e6cf, #dcedc1);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    margin: 2rem auto;
+}
+
+/* ---------- Form Styles ---------- */
+form {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+form:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------- Headings & Text ---------- */
+h2 {
+    color: #388e3c;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+/* ---------- Error Message ---------- */
+.error {
+    color: #e57373;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+/* ---------- Labels & Inputs ---------- */
+label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin: 1rem 0 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.8rem;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border-color: #81c784;
+    box-shadow: 0 0 5px rgba(129, 199, 132, 0.5);
+    outline: none;
+    background-color: #f9fdf9;
+}
+
+/* ---------- Submit Button ---------- */
+input[type="submit"] {
+    width: 100%;
+    padding: 0.8rem;
+    background: linear-gradient(90deg, #81c784, #66bb6a);
+    border: none;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(90deg, #66bb6a, #81c784);
+}
+
+/* ---------- Links ---------- */
+a {
+    color: #66bb6a;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #388e3c;
+}
