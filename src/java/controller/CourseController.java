@@ -59,15 +59,24 @@ public class CourseController extends HttpServlet {
             }
 
         } else if ("DeleteCourse".equals(action)) {
-            // Delete course
             String courseID = request.getParameter("courseID");
-            boolean deleted = courseDAO.deleteCourse(courseID);
+            boolean deleted = false;
+            try {
+                deleted = courseDAO.deleteCourse(courseID);
+            } catch (Exception e) {
+                e.printStackTrace();
+                request.setAttribute("ERROR", "Lỗi khi xóa khóa học: " + e.getMessage());
+                request.getRequestDispatcher("courseList.jsp").forward(request, response);
+                return;
+            }
             if (deleted) {
+                // Xóa thành công, load lại danh sách
                 response.sendRedirect("MainController?action=ViewActiveCourses");
             } else {
-                request.setAttribute("ERROR", "Failed to delete course!");
+                request.setAttribute("ERROR", "Không thể xóa khóa học này!");
                 request.getRequestDispatcher("courseList.jsp").forward(request, response);
             }
+            return;
 
         } else if ("ViewCourses".equals(action)) {
             // Display course list

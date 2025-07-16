@@ -5,6 +5,7 @@
 package dao;
 
 import dto.Course;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -72,15 +73,28 @@ public class CourseDAO {
         return success;
     }
 
-    // Delete a course by courseID
+    // Delete a course by courseID (delete related reviews and registrations first)
     public boolean deleteCourse(String courseID) throws Exception {
         boolean success = false;
-        String sql = "DELETE FROM tblCourses WHERE courseID = ?";
-        try (PreparedStatement ps = DatabaseConnection.initializeDatabase().prepareStatement(sql)) {
-            ps.setString(1, courseID);
-            success = ps.executeUpdate() > 0;
+        try (Connection conn = DatabaseConnection.initializeDatabase()) {
+            // Xóa các review liên quan
+            try (PreparedStatement ps1 = conn.prepareStatement("DELETE FROM tblReviews WHERE courseID = ?")) {
+                ps1.setString(1, courseID);
+                ps1.executeUpdate();
+            }
+            // Xóa các registration liên quan
+            try (PreparedStatement ps2 = conn.prepareStatement("DELETE FROM tblRegistrations WHERE courseID = ?")) {
+                ps2.setString(1, courseID);
+                ps2.executeUpdate();
+            }
+            // Xóa khóa học
+            try (PreparedStatement ps3 = conn.prepareStatement("DELETE FROM tblCourses WHERE courseID = ?")) {
+                ps3.setString(1, courseID);
+                success = ps3.executeUpdate() > 0;
+            }
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.err.println("[CourseDAO] Lỗi khi xóa khóa học: " + e.getMessage());
+            throw e;
         }
         return success;
     }

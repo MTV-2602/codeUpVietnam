@@ -66,26 +66,25 @@ public class RegistrationDAO {
 
     // Get a registration by registrationID
     public Registration getRegistrationByID(String registrationID) throws Exception {
-        Registration registration = null;
-        String sql = "SELECT registrationID, userID, courseID, registrationDate, status, instructorID "
-                   + "FROM tblRegistrations WHERE registrationID = ?";
-        try (PreparedStatement ps = DatabaseConnection.initializeDatabase().prepareStatement(sql)) {
-            ps.setString(1, registrationID);
-            try (ResultSet rs = ps.executeQuery()) {
-                if (rs.next()) {
-                    registration = new Registration();
-                    registration.setRegistrationID(rs.getString("registrationID"));
-                    registration.setUserID(rs.getString("userID"));
-                    registration.setCourseID(rs.getString("courseID"));
-                    registration.setRegistrationDate(rs.getTimestamp("registrationDate"));
-                    registration.setStatus(rs.getString("status"));
-                    registration.setInstructorID(rs.getString("instructorID"));
-                }
+            Registration registration = null;
+    String sql = "SELECT registrationID, userID, courseID, registrationDate, status, instructorID, registrationNotes "
+               + "FROM tblRegistrations WHERE registrationID = ?";
+    try (PreparedStatement ps = DatabaseConnection.initializeDatabase().prepareStatement(sql)) {
+        ps.setString(1, registrationID);
+        try (ResultSet rs = ps.executeQuery()) {
+            if (rs.next()) {
+                registration = new Registration();
+                registration.setRegistrationID(rs.getString("registrationID"));
+                registration.setUserID(rs.getString("userID"));
+                registration.setCourseID(rs.getString("courseID"));
+                registration.setRegistrationDate(rs.getTimestamp("registrationDate"));
+                registration.setStatus(rs.getString("status"));
+                registration.setInstructorID(rs.getString("instructorID"));
+                registration.setRegistrationNotes(rs.getString("registrationNotes")); // ✅ THÊM DÒNG NÀY
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
         }
-        return registration;
+    }
+    return registration;
     }
 
     // Get all registrations
@@ -139,7 +138,7 @@ public class RegistrationDAO {
     // Get registrations by instructorID
     public List<Registration> getRegistrationsByInstructorID(String instructorID) throws Exception {
         List<Registration> list = new ArrayList<>();
-        String sql = "SELECT registrationID, userID, courseID, registrationDate, status, instructorID, notes "
+        String sql = "SELECT registrationID, userID, courseID, registrationDate, status, instructorID, registrationNotes "
                    + "FROM tblRegistrations WHERE instructorID = ?";
         try (PreparedStatement ps = DatabaseConnection.initializeDatabase().prepareStatement(sql)) {
             ps.setString(1, instructorID);
@@ -152,7 +151,7 @@ public class RegistrationDAO {
                     reg.setRegistrationDate(rs.getTimestamp("registrationDate"));
                     reg.setStatus(rs.getString("status"));
                     reg.setInstructorID(rs.getString("instructorID"));
-                    reg.setNotes(rs.getString("notes"));
+                    reg.setRegistrationNotes(rs.getString("registrationNotes"));
                     list.add(reg);
                 }
             }
@@ -163,7 +162,7 @@ public class RegistrationDAO {
     // Get all registrations for instructors
     public List<Registration> getAllRegistrationsForInstructors() throws Exception {
         List<Registration> registrations = new ArrayList<>();
-        String sql = "SELECT registrationID, userID, courseID, registrationDate, status, instructorID, notes "
+        String sql = "SELECT registrationID, userID, courseID, registrationDate, status, instructorID, registrationNotes "
                    + "FROM tblRegistrations";
         try (PreparedStatement ps = DatabaseConnection.initializeDatabase().prepareStatement(sql)) {
             try (ResultSet rs = ps.executeQuery()) {
@@ -175,7 +174,7 @@ public class RegistrationDAO {
                     registration.setRegistrationDate(rs.getTimestamp("registrationDate"));
                     registration.setStatus(rs.getString("status"));
                     registration.setInstructorID(rs.getString("instructorID"));
-                    registration.setNotes(rs.getString("notes"));
+                    registration.setRegistrationNotes(rs.getString("registrationNotes"));
                     registrations.add(registration);
                 }
             }
@@ -183,12 +182,12 @@ public class RegistrationDAO {
         return registrations;
     }
 
-    // Update registration notes
-    public boolean updateNotes(String registrationID, String notes) throws Exception {
+    // Update registration registrationNotes
+    public boolean updateNotes(String registrationID, String registrationNotes) throws Exception {
         boolean success = false;
-        String sql = "UPDATE tblRegistrations SET notes = ? WHERE registrationID = ?";
+        String sql = "UPDATE tblRegistrations SET registrationNotes = ? WHERE registrationID = ?";
         try (PreparedStatement ps = DatabaseConnection.initializeDatabase().prepareStatement(sql)) {
-            ps.setString(1, notes);
+            ps.setString(1, registrationNotes);
             ps.setString(2, registrationID);
             success = ps.executeUpdate() > 0;
         }

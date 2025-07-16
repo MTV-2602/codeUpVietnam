@@ -18,10 +18,20 @@ public class Registration {
     private Timestamp registrationDate; // Stores full date-time
     private String status;             // 'Pending', 'Confirmed', 'Cancelled'
     private String instructorID;       // Can be null if not assigned
-    private String notes;
+    private String registrationNotes ;
 
     // Default constructor
     public Registration() {
+    }
+
+    // Getter
+    public String getRegistrationNotes() {
+        return registrationNotes;
+    }
+
+    // Setter
+    public void setRegistrationNotes(String registrationNotes) {
+        this.registrationNotes = registrationNotes;
     }
 
     // Parameterized constructor
@@ -89,14 +99,6 @@ public class Registration {
         this.instructorID = instructorID;
     }
 
-    // Getter/Setter for notes
-    public String getNotes() {
-        return notes;
-    }
-
-    public void setNotes(String notes) {
-        this.notes = notes;
-    }
 
     @Override
     public String toString() {
