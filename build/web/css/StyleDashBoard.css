@@ -1,0 +1,55 @@
+.dashboard-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề */
+.dashboard-container h2 {
+    text-align: center;
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Form Dashboard */
+.dashboard-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Nhóm các nút trên cùng một hàng */
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* Định dạng chung cho button */
+.button-group button {
+    padding: 0.8rem 1.5rem;
+    background-color: #66bb6a;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hiệu ứng hover cho button */
+.button-group button:hover {
+    background-color: #388e3c;
+    transform: translateY(-2px);
+}
+
+/* Hiệu ứng active cho button */
+.button-group button:active {
+    transform: translateY(1px);
+}
